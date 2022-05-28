@@ -15,13 +15,13 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  const pathways = ['about', 'projects', 'education', 'contact']
+  const pathways = ['about', 'experience', 'projects', 'education', 'contact']
 
   const directory = pathways.map((path) => {
-    const redirect = "/" + path
+    const redirect = "/#" + path
     return (
       
-        <Link href={redirect}>
+        <Link href={redirect} scroll={false}>
           <a
             className={`text-base text-xs transition ease-in-out duration-1000 hover:text-light_gray ${
               router.asPath === {redirect}
@@ -30,7 +30,7 @@ export default function Navbar() {
             }`}
           >
             {path.toUpperCase()}{" "}
-            {router.asPath === {redirect} && (
+            {/* {router.asPath === {redirect} && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -44,14 +44,14 @@ export default function Navbar() {
                   d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
                   ></path>
               </svg>
-            )}
+            )} */}
           </a>
         </Link>
     )
   });
 
   return (
-    <div className="sticky top-0 mx-auto px-4 py-5 bg-ivory dark:bg-dark_gray">
+    <div className="sticky z-50 top-0 mx-auto px-4 py-5 bg-ivory dark:bg-dark_gray">
       <div className="flex  md:flex-row justify-between items-center">
         {/* Logo / Home / Text */}
 
