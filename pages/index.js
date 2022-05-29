@@ -19,12 +19,33 @@ import Hero from "../components/index/Hero";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProjectCards from "../components/projects/ProjectCards";
-import ExperienceCards from "../components/experiences/ExperienceCards2";
+import ExperienceCards from "../components/experiences/ExperienceCards";
 
 const App = () => {
   useEffect(() => {
     Aos.init({});
   }, [])
+
+  const heroBg = {
+    image: '/tower.jpg',
+    scale: [1, 2, "easeIn"],
+  }
+
+  const heroText = {
+    translateY: [0, 90],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: (
+      <div className="absolute inset-x-0 inset-y-20 flex flex-col items-center justify-start">
+        <p className="text-8xl lg:text-9xl font-thin text-white font-sans">
+          JONATHAN TAN
+        </p>
+        <p className="text-xl lg:text-3xl font-thin font-sans text-white text-center items-stretch">
+          I design and engineer fullstack applications
+        </p>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -77,20 +98,17 @@ const App = () => {
           </Parallax> */}
           <div className="mx-10">
             <ParallaxBanner
-              layers={[{
-                image: '/tower.jpg',
-                scale: [1, 1.5, "easeInQuad"],
-              }]}
-              className="aspect-[1/1] h-screen"
+              layers={[heroBg, heroText]}
+              className="aspect-[1/1]"
             >
-              <div className="absolute inset-x-0 inset-y-20 flex flex-col items-center justify-start">
+              {/* <div className="absolute inset-x-0 inset-y-20 flex flex-col items-center justify-start">
                 <p className="text-8xl lg:text-9xl font-thin text-white font-sans">
                   JONATHAN TAN
                 </p>
                 <p className="text-xl lg:text-3xl font-thin font-sans text-white text-center items-stretch">
                   I design and engineer fullstack applications
                 </p>
-              </div>
+              </div> */}
             </ParallaxBanner>
           </div>
           {/* </ParallaxLayer> */}
@@ -99,11 +117,11 @@ const App = () => {
             offset={1}
             speed={0.5}
             > */}
-          <ParallaxBanner
-            layers={[{}]}
+          <Parallax 
+            opacity={[0, 2, "easeOutQuad"]}
           >
             <div className="relative mx-10 grid grid-cols-3 gap-10" id="/#about">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top">
+              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 ABOUT ME
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 md:col-span-2">
@@ -111,7 +129,7 @@ const App = () => {
                   I bring backend and data engineering to data-intensive applications.
                 </p>
                 <p className="text-lg text-black font-thin">
-                  I'm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems.
+                  I&aposm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems.
                   On the side, I love a cup of iced latte with a hint of cherry to beat the Singapore weather.
                   Feel free to drop me a message or browse my projects! Always happy to chat.
                 </p>
@@ -123,16 +141,18 @@ const App = () => {
                 </p>
               </div>
             </div>
-          </ParallaxBanner>
+          </Parallax>
           {/* </ParallaxLayer> */}
 
           {/* <ParallaxLayer
             offset={1.5}
             speed={0.5}
             > */}
-          <Parallax>
+          <Parallax 
+            opacity={[0, 2, "easeOutQuad"]}
+          >
             <div className="relative mx-10 grid grid-cols-3 gap-10">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top">
+              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 WORK EXPERIENCE
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
@@ -149,9 +169,11 @@ const App = () => {
             speed={0.5}
             className="overflow-visible"
             > */}
-          <Parallax>
+          <Parallax 
+            opacity={[0, 2, "easeOutQuad"]}
+          >
             <div className="relative mx-10 grid grid-cols-3 gap-10 overflow-visible">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top">
+              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 PROJECTS
               </div>
               <div className="relative inset-y-0 col-span-2 flex gap-10">
@@ -159,7 +181,7 @@ const App = () => {
                   01 / 05
                 </p>
                 <Link href="/projects">
-                  <button class="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2">
+                  <button className="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2">
                     View All
                   </button>
                 </Link>
@@ -175,18 +197,15 @@ const App = () => {
             offset={3}
             speed={0.5}
             > */}
-          <Parallax>
+          <Parallax 
+            opacity={[0, 2, "easeOutQuad"]}
+          >
             <div className="relative mx-10 grid grid-cols-3 gap-10">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top">
+              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 CONTACT ME
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
                 {/* Insert Contact Me Form */}
-                <Link href="/contact">
-                  <button class="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2">
-                    View All
-                  </button>
-                </Link>
               </div>
             </div>
           </Parallax>

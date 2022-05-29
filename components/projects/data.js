@@ -5,17 +5,17 @@ const PROJECTS = [
     about: "A highly customizable, scalable, intuitive and automated report rendering solution",
     projectOutcome: "Finalist, GS ENGage 2021 by Goldman Sachs",
     techStack: [
-      "React",
-      "Next.js",
-      "Java",
-      "Spring Boot",
-      "Python",
-      "FastAPI",
-      "S3",
+      {stack: 1, value: "React"},
+      {stack: 2, value: "Next.js"},
+      {stack: 3, value: "Java"},
+      {stack: 4, value: "Spring Boot"},
+      {stack: 5, value: "Python"},
+      {stack: 6, value: "FastAPI"},
+      {stack: 7, value: "S3"},
     ],
-    weblinks: {
-      github: "https://github.com/quinncheong/GSEngage2022-TheFoobarFighters"
-    },
+    weblinks: [
+      {site: "github", link: "https://github.com/quinncheong/GSEngage2022-TheFoobarFighters"},
+    ],
     image: "/gsengage2021.png",
   },
   {
@@ -24,12 +24,12 @@ const PROJECTS = [
     about: "Automated video generator for education",
     projectOutcome: "Champions, APPETIZER Hackathon 2021 by NAVER Cloud",
     techStack: [
-      "React",
-      "Node.js",
+      {stack: 1, value: "React"},
+      {stack: 2, value: "Node.js"},
     ],
-    weblinks: {
-      github: "https://github.com/quinncheong/appetizer-foobar-2022"
-    },
+    weblinks: [
+      {site: "github", link: "https://github.com/quinncheong/appetizer-foobar-2022"},
+    ],
     image: "/appetizer2021.png",
   },
   {
@@ -38,11 +38,11 @@ const PROJECTS = [
     about: "A Python-based CLI tool to view tickets via Zendesk's API",
     projectOutcome: "Offered Software Engineering Intern Position at Zendesk",
     techStack: [
-        "Python",
+      {stack: 1, value: "Python"},
     ],
-    weblinks: {
-      github: "https://github.com/jonathantan1425/zcc-zendesk-ticket-viewer"
-    },
+    weblinks: [
+      {site: "github", link: "https://github.com/jonathantan1425/zcc-zendesk-ticket-viewer"},
+    ],
     image: "/zcc.png",
   },
 ];

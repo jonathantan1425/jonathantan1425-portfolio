@@ -1,34 +1,33 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PROJECTS from "./data";
 import ICONS from "./icons";
 
 export default function ProjectCards() {
-  const TechStackIcons = (techStack) => {
+  const renderTechStacks = (techStack) => {
     return (
       <div className="flex gap-x-7">
         {techStack.map((framework) => {
           return (
-            <p className="font-light font-mono text-sm align-middle text-left text-dark_gray">
-              {framework.toUpperCase()}
+            <p className="font-light font-mono text-sm align-middle text-left text-dark_gray" key={framework.stack}>
+              {framework.value.toUpperCase()}
             </p>
           )})}
       </div>
     )
   }
 
-  const WeblinkIcons = (weblinks) => {
+  const renderWeblinkIcons = (weblinks) => {
     return (
       <div>
-        {Object.keys(weblinks).map((weblink) => {
+        {weblinks.map((weblink) => {
           return (
-            <div>
-              <Link href={weblinks[weblink]}>
-                <button>
-                  {ICONS[weblink]}
-                </button>
-              </Link>
-            </div>
+            <Link href={weblink.link} key={weblink.site}>
+              <button>
+                {ICONS[weblink.site]}
+              </button>
+            </Link>
           )})}
       </div>
     )
@@ -38,31 +37,30 @@ export default function ProjectCards() {
     return (
       <div
         className="flex-none w-1/2 mr-8 md:pb-4 gap-10"
+        key={project.id}
       >
-        <div className="aspect-video overflow-hidden">
-          <img
+        <div className="relative aspect-video overflow-hidden">
+          <Image
             className="object-cover hover:shadow-xl hover:scale-110 duration-300"
             src={project.image}
             alt={project.projectName}
+            layout='fill'
+            unsized
           />
         </div>
         <div className="py-2">
-          <div className="space-y-1">
+          <div className="space-y-2">
             <p className="font-light text-sm">
               {project.projectOutcome.toUpperCase()}
             </p>
-          </div>
-          <div className="space-y-1">
             <h3 className="text-3xl mb-2">
               {project.projectName}
             </h3>
-          </div>
-          <div className="space-y-1">
             <p className="">
               {project.about}
             </p>
-            {TechStackIcons(project.techStack)}
-            {WeblinkIcons(project.weblinks)}
+            {renderTechStacks(project.techStack)}
+            {renderWeblinkIcons(project.weblinks)}
           </div>
         </div>
       </div>

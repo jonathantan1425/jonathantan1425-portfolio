@@ -3,103 +3,159 @@ import Link from "next/link";
 import EXPERIENCES from "./data";
 
 export default function ExperienceCards() {
-  const renderJobCard = (company, job) => {
-    return (
-      <>
-        <div className="flex gap-5">
-          <p className="text-semibold">
-            {job.position}
-          </p>
-          <p className="text-semibold text-middle_blue">
-            //
-          </p>
-          <p className="text-semibold text-middle_blue">
-            {company}
-          </p>
-        </div>
-        <p>{job.start_date} - {job.end_date}</p>
-          <ul>
-            {job.description.map((line) => {
-              return (
-                <li>
-                  {line}
-                </li>
-              )})}
-          </ul>
-      </>
-    )
-  };
+  const [openTab, setOpenTab] = React.useState(EXPERIENCES[0].id);
+//   const renderJobCard = (job) => {
+//     return (
+//       <>
+//         <div className="flex gap-5">
+//           <p className="text-semibold">
+//             {job.position}
+//           </p>
+//           <p className="text-semibold text-middle_blue">
+//             &#47&#47
+//           </p>
+//           <p className="text-semibold text-middle_blue">
+//             {company}
+//           </p>
+//         </div>
+//         <p>{job.start_date} - {job.end_date}</p>
+//           <ul>
+//             {job.description.map((line) => {
+//               return (
+//                 <li key={line.id}>
+//                   {line.value}
+//                 </li>
+//               )})}
+//           </ul>
+//       </>
+//     )
+//   };
 
-  const renderCompanyCard = (company, companyData) => {
-    const companyTab = "tabs-" + company.replace(/ /g, '');
-    const companyAriaLabel = "tabs-" + company.replace(/ /g, '') + "-tab";
+  // const renderCompanyCard = (company, companyData) => {
+  //   const companyTab = "tabs-" + company.replace(/ /g, '');
+  //   const companyAriaLabel = "tabs-" + company.replace(/ /g, '') + "-tab";
 
-    return (
-      <div className="tab-pane fade" id={companyTab} role="tabpanel" aria-labelledby={companyAriaLabel}>
-        {companyData.map((job) => {
-          return (
-            <>
-              {renderJobCard(company, job)}
-            </>
-          )
-        })}
-      </div>
-    )
-  };
+  //   return (
+  //     <div className="tab-pane fade" id={companyTab} role="tabpanel" aria-labelledby={companyAriaLabel}>
+  //       {companyData.map((job) => {
+  //         return (
+  //           <>
+  //             {renderJobCard(company, job)}
+  //           </>
+  //         )
+  //       })}
+  //     </div>
+  //   )
+  // };
 
-  const renderCompanyTabs = () => {
-    const companySection = "#" + company.replace(/ /g, '');
-    const companyTab = "tabs-" + company.replace(/ /g, '') + "-tab";
-    const companyTarget = "#tabs-" + company.replace(/ /g, '');
-    const companyAriaControls = "tabs-" + company.replace(/ /g, '');
-    console.log(companyAriaControls)
-    return (
-      <>
-        {EXPERIENCES.map((experience) => {
-          return (
-            <li className="nav-item" role="presentation">
-              <a href={companySection} className="
-              nav-link
-              block
-              font-medium
-              text-xs
-              leading-tight
-              uppercase
-              border-x-0 border-t-0 border-b-2 border-transparent
-              px-6
-              py-3
-              my-2
-              hover:border-transparent hover:bg-gray-100
-              focus:border-transparent" 
-              id={companyTab} data-bs-toggle="pill" data-bs-target={companyTarget} role="tab" aria-controls={companyAriaControls}
-              aria-selected="false">
-                {company}
-              </a>
-            </li>
-          )
-        })}
-      </>
-    )
-  };
+  // const renderCompanyTabs = () => {
+  //   const [openTab, setOpenTab] = React.useState(1);
+  //   console.log(companyAriaControls)
+  //   var count = 0;
+  //   return (
+  //     <>
+  //       {EXPERIENCES.map((experience) => {
+  //         count++;
+  //         const href = "#link" + count;
+  //         console.log(href);
+  //         return (
+  //           <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+  //             <a
+  //               className={
+  //                 "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+  //                 (openTab === 1
+  //                   ? "text-white bg-black-600"
+  //                   : "text-black-600 bg-white")
+  //               }
+  //               onClick={e => {
+  //                 e.preventDefault();
+  //                 setOpenTab(1);
+  //               }}
+  //               data-toggle="tab"
+  //               href="#link1"
+  //               role="tablist"
+  //             >
+  //               {experience.company}
+  //             </a>
+  //           </li>
+  //         )
+  //       })}
+  //     </>
+  //   )
+  // };
 
   return (
     <>
-      <ul class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab"
-      role="tablist">
-        {Object.keys(EXPERIENCES).map((company) => {
-          return (
-            <>{renderCompanyTab(company)}</>
-            )
-          })}
-      </ul>
-      <div className="tab-content" id="tabs-tabContent">
-        {Object.keys(EXPERIENCES).map((company) => {
-            return (
-              <>
-                {renderCompanyCard(company, EXPERIENCES[company])}
-              </>
+      <div className="flex flex-wrap">
+        <div className="w-full">
+          <ul
+            className="flex mb-0 list-none flex-wrap pb-4 flex-row"
+            role="tablist"
+          >
+            {EXPERIENCES.map((experience) => {
+              return (
+                <li className="-mb-px mr-2 last:mr-0 flex-auto text-center" key={experience.id}>
+                  <a
+                    className={
+                      "text-xs font-bold uppercase px-5 py-3 block leading-normal " +
+                      (openTab === experience.id
+                        ? "text-white bg-green"
+                        : "text-dark_gray")
+                    }
+                    onClick={e => {
+                      e.preventDefault();
+                      setOpenTab(experience.id);
+                    }}
+                    data-toggle="tab"
+                    href={experience.id}
+                    role="tablist"
+                  >
+                    {experience.company}
+                  </a>
+                </li>
               )
             })}
+          </ul>
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6">
+            <div className="px-5 py-5 flex-auto">
+              <div className="tab-content tab-space">
+                {EXPERIENCES.map((experience) => {
+                  return (
+                    <div className={openTab === experience.id ? "block" : "hidden"} key={experience.id}>
+                      <ul className="">
+                        <div className="flex gap-3">
+                          <p className="font-semibold text-lg">
+                            {experience.position}
+                          </p>
+                          <p className="font-semibold text-green text-lg">
+                            &#47&#47
+                          </p>
+                          <p className="font-semibold text-green text-lg">
+                            {experience.company}
+                          </p>
+                        </div>
+                        <p className="font-mono">
+                          {experience.start_date} - {experience.end_date}
+                        </p>
+                        <p className="text-md text-charcoal">
+                          {experience.about}
+                        </p>
+                        <ul className="list-disc px-5 my-5 space-y-3">
+                          {experience.description.map((line) => {
+                            return (
+                              <li key={line.line}>
+                                {line.value}
+                              </li>
+                            )})}
+                        </ul>
+                      </ul>
+                    </div>
+                  )})
+                }
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="text absolute w-full px-2 py-20 md:px-7 top-10 left-10 inset-x-0 text-6xl lg:text-9xl font-normal text-white">
           JONATHAN TAN
         </div>
-        <div classname="text relative w-full p-2 md:p-8 top-10 left-10 inset-x-0 text-6xl lg:text-9xl font-bold text-white">
+        <div className="text relative w-full p-2 md:p-8 top-10 left-10 inset-x-0 text-6xl lg:text-9xl font-bold text-white">
           I design and engineer fullstack applications.
         </div>
       </div>

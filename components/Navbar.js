@@ -15,13 +15,18 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  const pathways = ['about', 'experience', 'projects', 'education', 'contact']
+  const pathways = [
+    {id: 'about', value: 'about'},
+    {id: 'experience', value: 'experience'},
+    {id: 'projects', value: 'projects'},
+    {id: 'contact', value: 'contact'},
+  ]
 
   const directory = pathways.map((path) => {
-    const redirect = "/#" + path
+    const redirect = "/#" + path.value
     return (
       
-        <Link href={redirect} scroll={false}>
+        <Link href={redirect} scroll={false} key={path.id}>
           <a
             className={`text-base text-xs transition ease-in-out duration-1000 hover:text-light_gray ${
               router.asPath === {redirect}
@@ -29,7 +34,7 @@ export default function Navbar() {
                 : "text-dark_gray font-light dark:text-ivory"
             }`}
           >
-            {path.toUpperCase()}{" "}
+            {path.value.toUpperCase()}{" "}
             {/* {router.asPath === {redirect} && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -56,10 +56,20 @@ module.exports = {
     },
   },
   variants: {
-    fill: ['hover', 'focus']
+    fill: ['hover', 'focus'],
+    animation: ["motion-safe"],
   },
   plugins: [
     require('tw-elements/dist/plugin'),
   ],
   darkMode: `class`,
+  animation: {
+    fadeIn: "fadeIn 2s ease-in forwards"
+  },
+  keyframes: {
+    fadeIn: {
+      "0%": { opacity: 0 },
+      "100%": { opacity: 1 }
+    }
+  },
 }
