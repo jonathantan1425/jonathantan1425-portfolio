@@ -27,7 +27,7 @@ const App = () => {
   }, [])
 
   const heroBg = {
-    image: '/tower.jpg',
+    image: '/tower.JPG',
     scale: [1, 2, "easeIn"],
   }
 
