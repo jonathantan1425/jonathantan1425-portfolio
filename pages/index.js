@@ -120,16 +120,16 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10" id="/#about">
+            <div className="relative mx-10 grid grid-cols-3 gap-10" name="about">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 ABOUT ME
               </div>
-              <div className="relative inset-y-0 right-0 space-y-5 md:col-span-2">
+              <div className="relative inset-y-0 right-0 space-y-5 col-span-2 lg:right-100">
                 <p className="text-6xl text-black font-poppins font-medium">
                   I bring backend and data engineering to data-intensive applications.
                 </p>
                 <p className="text-lg text-black font-thin">
-                  I&aposm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems.
+                  I'm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems.
                   On the side, I love a cup of iced latte with a hint of cherry to beat the Singapore weather.
                   Feel free to drop me a message or browse my projects! Always happy to chat.
                 </p>
@@ -151,7 +151,7 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10">
+            <div className="relative mx-10 grid grid-cols-3 gap-10" name="experience">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 WORK EXPERIENCE
               </div>
@@ -172,7 +172,7 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10 overflow-visible">
+            <div className="relative mx-10 grid grid-cols-3 gap-10 overflow-visible" name="projects">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 PROJECTS
               </div>
@@ -200,7 +200,7 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10">
+            <div className="relative mx-10 grid grid-cols-3 gap-10" name="contact">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
                 CONTACT ME
               </div>

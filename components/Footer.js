@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import userData from "../constants/data";
 import { socialMedia } from "./SocialMedia";
+import { GithubIcon } from "./projects/icons";
 
 export default function Footer() {
   return (
@@ -10,8 +12,15 @@ export default function Footer() {
           <div className="text-ivory">
             <p>&copy; {userData.fullName}. All rights reserved.</p>
           </div>
-          <div className="text-ivory">
-            Developed by {userData.name}
+          <div className="flex items-center gap-x-4">
+            <p className="text-ivory">
+              Developed by {userData.name}
+            </p>
+            <Link href="https://github.com/jonathantan1425/jonathantan1425-portfolio">
+              <button>
+                {GithubIcon("2em", "ivory")}
+              </button>
+            </Link>
           </div>
           <div className="space-x-4 flex flex-row items-center">
             {socialMedia("ivory")}

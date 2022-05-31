@@ -9,7 +9,7 @@ const ICONS = {
   "Python": PythonIcon(SIZE),
   "FastAPI": FastApiIcon(SIZE),
   "S3": S3Icon(SIZE),
-  "github": GithubIcon(SIZE), 
+  "github": GithubIcon(SIZE, "currentColor"), 
 };
 
 export default ICONS;
@@ -161,11 +161,11 @@ function S3Icon(size, props) {
 }
 
 // icon:github | Ant Design Icons https://ant.design/components/icon/ | Ant Design
-function GithubIcon(size, props) {
+export function GithubIcon(size, color, props) {
   return (
     <svg
       viewBox="0 0 1024 1024"
-      fill="currentColor"
+      fill={color}
       height={size}
       width={size}
       {...props}

@@ -128,7 +128,7 @@ export default function ExperienceCards() {
                             {experience.position}
                           </p>
                           <p className="font-semibold text-green text-lg">
-                            &#47&#47
+                            //
                           </p>
                           <p className="font-semibold text-green text-lg">
                             {experience.company}

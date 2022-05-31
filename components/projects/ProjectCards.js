@@ -45,7 +45,6 @@ export default function ProjectCards() {
             src={project.image}
             alt={project.projectName}
             layout='fill'
-            unsized
           />
         </div>
         <div className="py-2">
