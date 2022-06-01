@@ -64,6 +64,7 @@ export default function Contact() {
         setSubmitted(true)
         setName('')
         setEmail('')
+        setPhone('')
         setBody('')
       }
   })}

@@ -3,7 +3,7 @@ const PERSONAL_EMAIL = process.env.personal_email;
 const EMAIL = process.env.email;
 const PASSWORD = process.env.password;
 
-export default function sendMail(req, res) {
+export default function send(req, res) {
   var nodeoutlook = require('nodejs-nodemailer-outlook')
   nodeoutlook.sendEmail({
     auth: {
@@ -16,6 +16,9 @@ export default function sendMail(req, res) {
     html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email}</p><p>Phone number:${req.body.phone}</p>`,
     onError: (e) => console.log(e),
-    onSuccess: (i) => console.log(i)
+    onSuccess: (i) => {
+      console.log(i);
+      res.status = 200;
+      return res;}
   });
 };

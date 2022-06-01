@@ -162,7 +162,6 @@ function S3Icon(size, props) {
 
 // icon:github | Ant Design Icons https://ant.design/components/icon/ | Ant Design
 export function GithubIcon(size, color, props) {
-  console.log(color)
   if (color === "light") {
     var style = "fill-dark_gray dark:fill-ivory hover:fill-mint dark:hover:fill-mint duration-300";
   } else if (color === "dark") {
