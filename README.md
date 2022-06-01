@@ -11,5 +11,7 @@ I built this as an avenue to learn front-end web development, as well as showcas
 * Vercel (deployment)
 
 ## Moving Forward
+* Add success/failure response for Contact
+* Add loading screen
 * Clean up the codebase, abstraction of logic
 * Try out better UI and animations
