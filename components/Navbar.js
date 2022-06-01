@@ -33,7 +33,7 @@ export default function Navbar() {
           smooth={true}
           offset={-100}
           duration={500}
-          className={`text-base text-xs transition ease-in-out duration-1000 cursor-pointer hover:text-light_gray ${
+          className={`text-base text-xs transition ease-in-out duration-300 cursor-pointer hover:text-mint dark:hover:text-mint ${
             router.asPath === {redirect}
               ? "text-dark_gray font-bold dark:text-ivory"
               : "text-dark_gray font-light dark:text-ivory"
@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky z-50 top-0 mx-auto px-4 py-5 bg-ivory dark:bg-dark_gray">
-      <div className="flex  md:flex-row justify-between items-center">
+      <div className="flex md:flex-row justify-between items-center">
         <Link 
           to="home"
           spy={true}
@@ -59,8 +59,8 @@ export default function Navbar() {
             className="hover:shadow-xl duration-300"
             src="/logo.png"
             alt="Jonathan Tan"
-            width={50}
-            height={50}
+            width={30}
+            height={30}
             />
         </Link>
 
@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
 
         <div className="space-x-4 flex flow-row items-center">
-          {socialMedia("dark_gray")}
+          {socialMedia("light")}
           <button
             aria-label="Toggle Dark Mode"
             type="button"
@@ -80,9 +80,7 @@ export default function Navbar() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                stroke="currentColor"
-                className="w-4 h-4 text-yellow-500 dark:text-yellow-500"
+                className="w-4 h-4 text-ivory dark:ivory stroke-dark_gray fill-dark_gray dark:stroke-ivory dark:fill-ivory hover:fill-mint hover:stroke-mint duration-300 dark:hover:fill-mint dark:hover:stroke-mint"
               >
                 {theme === "dark" ? (
                   <path

@@ -28,6 +28,7 @@ export default function Contact() {
           py-3
           px-[14px]
           text-dark_gray
+          dark:text-white
           border border-light_gray
           outline-none
           focus-visible:shadow-none
@@ -82,6 +83,7 @@ export default function Contact() {
               py-3
               px-[14px]
               text-dark_gray
+              dark:text-white
               border border-light_gray
               resize-none
               outline-none
@@ -100,10 +102,10 @@ export default function Contact() {
               text-white
               bg-mint
               rounded
-              border
               p-3
               transition
-              hover:bg-opacity-90
+              hover:bg-opacity-80
+              duration-300
               "
               >
             Send Message
