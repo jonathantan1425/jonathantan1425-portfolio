@@ -32,10 +32,10 @@ const App = () => {
     children: (
       <div className="absolute inset-x-0 inset-y-20 flex flex-col items-center justify-start">
         <p className="text-8xl lg:text-9xl font-thin text-white font-sans">
-          JONATHAN TAN
+          {"JONATHAN TAN"}
         </p>
         <p className="text-xl lg:text-3xl font-thin font-sans text-white text-center items-stretch">
-          I design and engineer fullstack applications
+          {"I design and engineer fullstack applications"}
         </p>
       </div>
     )
@@ -76,22 +76,22 @@ const App = () => {
           >
             <div className="relative mx-10 grid grid-cols-3 gap-10" name="about">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
-                ABOUT ME
+                {"ABOUT ME"}
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2 lg:right-100 lg:w-2/3">
                 <p className="text-6xl text-black font-poppins font-medium">
-                  I bring backend and data engineering to data-intensive applications.
+                  {"I bring backend and data engineering to data-intensive applications."}
                 </p>
                 <p className="text-lg text-black font-thin">
-                  I'm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems.
-                  On the side, I love a cup of iced latte with a hint of cherry to beat the Singapore weather.
-                  Feel free to drop me a message or browse my projects! Always happy to chat.
+                  {"I'm a penultimate student at Singapore Management University, pursuing a double degree in Business Management and Information Systems. \
+                  On the side, I love a cup of iced latte with a hint of cherry to beat the Singapore weather. \
+                  Feel free to drop me a message or browse my projects! Always happy to chat."}
                 </p>
                 <p className="text-lg text-black font-thin">
-                  Also, a couple of my current favorite tech stacks:
+                  {"Also, a couple of my current favorite tech stacks:"}
                 </p>
                 <p className="text-lg font-mono text-green dark:text-mint">
-                  PYTHON JAVA REACT MYSQL REDIS KAFKA
+                  {"PYTHON JAVA REACT MYSQL REDIS KAFKA"}
                 </p>
               </div>
             </div>
@@ -102,7 +102,7 @@ const App = () => {
           >
             <div className="relative mx-10 grid grid-cols-3 gap-10" name="experience">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
-                WORK EXPERIENCE
+                {"WORK EXPERIENCE"}
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
                 <ExperienceCards className="min-w-1/2"/>
@@ -115,15 +115,15 @@ const App = () => {
           >
             <div className="relative mx-10 grid grid-cols-3 gap-10 overflow-visible" name="projects">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
-                PROJECTS
+                {"PROJECTS"}
               </div>
               <div className="relative inset-y-0 col-span-2 flex gap-10">
                 <p className="py-1 text-sm text-black align-center">
-                  01 / 03
+                  {"03 / 03"}
                 </p>
                 <Link href="/projects">
                   <button className="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2" disabled>
-                    View All
+                    {"View All"}
                   </button>
                 </Link>
               </div>
@@ -138,7 +138,7 @@ const App = () => {
           >
             <div className="relative mx-10 grid grid-cols-3 gap-10" name="contact">
               <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
-                CONTACT ME
+                {"CONTACT ME"}
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
                 <Contact/>

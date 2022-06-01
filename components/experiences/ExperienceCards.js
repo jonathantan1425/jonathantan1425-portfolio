@@ -50,7 +50,7 @@ export default function ExperienceCards() {
                               {experience.position}
                             </p>
                             <p className="font-semibold text-green text-2xl dark:text-mint">
-                              //
+                              {"//"}
                             </p>
                             <p className="font-semibold text-green text-2xl dark:text-mint">
                               {experience.company}
