@@ -20,6 +20,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProjectCards from "../components/projects/ProjectCards";
 import ExperienceCards from "../components/experiences/ExperienceCards";
+import Contact from "../components/Contact";
 
 const App = () => {
   useEffect(() => {
@@ -205,7 +206,7 @@ const App = () => {
                 CONTACT ME
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
-                {/* Insert Contact Me Form */}
+                <Contact/>
               </div>
             </div>
           </Parallax>
