@@ -96,7 +96,7 @@ const App = () => {
               </div>
             </div>
           </Parallax> */}
-          <div className="mx-10">
+          <div className="mx-10" name="home">
             <ParallaxBanner
               layers={[heroBg, heroText]}
               className="aspect-[1/1]"
