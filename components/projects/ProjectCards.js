@@ -10,7 +10,7 @@ export default function ProjectCards() {
       <div className="flex gap-x-7">
         {techStack.map((framework) => {
           return (
-            <p className="font-light font-mono text-sm align-middle text-left text-dark_gray" key={framework.stack}>
+            <p className="font-light font-mono text-sm align-middle text-left text-dark_gray dark:text-light_gray" key={framework.stack}>
               {framework.value.toUpperCase()}
             </p>
           )})}
@@ -36,7 +36,7 @@ export default function ProjectCards() {
   const renderProjectCards = PROJECTS.map((project) => {
     return (
       <div
-        className="flex-none w-1/2 mr-8 md:pb-4 gap-10"
+        className="flex-none w-max md:w-2/3 mr-8 md:pb-4 gap-10 snap-center"
         key={project.id}
       >
         <div className="relative aspect-video overflow-hidden">
@@ -45,7 +45,6 @@ export default function ProjectCards() {
             src={project.image}
             alt={project.projectName}
             layout='fill'
-            unsized
           />
         </div>
         <div className="py-2">
@@ -53,7 +52,7 @@ export default function ProjectCards() {
             <p className="font-light text-sm">
               {project.projectOutcome.toUpperCase()}
             </p>
-            <h3 className="text-3xl mb-2">
+            <h3 className="text-4xl mb-2 text-green dark:text-mint">
               {project.projectName}
             </h3>
             <p className="">
@@ -70,7 +69,7 @@ export default function ProjectCards() {
   return (
     <div
     id="scrollContainer"
-    className="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8"
+    className="container-snap flex flex-no-wrap overflow-x-scroll scrolling-touch items-center mb-8 snap-mandatory snap-x duration-1000 2xl:first:pl-96"
     >
       {renderProjectCards}
     </div>

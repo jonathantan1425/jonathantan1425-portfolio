@@ -6,7 +6,6 @@ const Comp = () => {
   const handleScroll = () => {
     const posY = ref.current.getBoundingClientRect().top;
     const offset = window.pageYOffset - posY;
-    console.log(offset);
   };
 
   useEffect(() => {
