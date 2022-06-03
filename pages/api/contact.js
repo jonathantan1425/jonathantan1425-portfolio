@@ -1,3 +1,5 @@
+import { CatchingPokemonSharp } from '@mui/icons-material';
+
 require('dotenv').config();
 const PERSONAL_EMAIL = process.env.personal_email;
 const EMAIL = process.env.email;
@@ -19,6 +21,7 @@ export default function send(req, res) {
     onSuccess: (i) => {
       console.log(i);
       res.status = 200;
+      console.log(res)
       return res;}
   });
 };

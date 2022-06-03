@@ -45,6 +45,9 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
+      aspectRatio: {
+        '2/3': '2 / 3',
+      },
     },
   },
   variants: {

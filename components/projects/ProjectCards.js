@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PROJECTS from "./data";
@@ -7,7 +7,7 @@ import ICONS from "./icons";
 export default function ProjectCards() {
   const renderTechStacks = (techStack) => {
     return (
-      <div className="flex gap-x-7">
+      <div className="flex gap-x-7 flex-grow w-full flex-wrap">
         {techStack.map((framework) => {
           return (
             <p className="font-light font-mono text-sm align-middle text-left text-dark_gray dark:text-light_gray" key={framework.stack}>
@@ -36,7 +36,7 @@ export default function ProjectCards() {
   const renderProjectCards = PROJECTS.map((project) => {
     return (
       <div
-        className="flex-none w-max md:w-2/3 mr-8 md:pb-4 gap-10 snap-center"
+        className="flex-none w-full sm:w-2/3 snap-center"
         key={project.id}
       >
         <div className="relative aspect-video overflow-hidden">
@@ -52,10 +52,10 @@ export default function ProjectCards() {
             <p className="font-light text-sm">
               {project.projectOutcome.toUpperCase()}
             </p>
-            <h3 className="text-4xl mb-2 text-green dark:text-mint">
+            <h3 className="text-3xl sm:text-4xl mb-2 text-green dark:text-mint">
               {project.projectName}
             </h3>
-            <p className="">
+            <p className="text-md">
               {project.about}
             </p>
             {renderTechStacks(project.techStack)}
@@ -69,7 +69,7 @@ export default function ProjectCards() {
   return (
     <div
     id="scrollContainer"
-    className="container-snap flex flex-no-wrap overflow-x-scroll scrolling-touch items-center mb-8 snap-mandatory snap-x duration-1000 2xl:first:pl-96"
+    className="container-snap flex flex-row flex-no-wrap overflow-x-scroll scrolling-touch snap-mandatory snap-x space-x-10 sm:col-span-3"
     >
       {renderProjectCards}
     </div>

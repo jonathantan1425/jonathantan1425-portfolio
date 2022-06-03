@@ -45,7 +45,7 @@ export default function Navbar() {
   });
 
   return (
-    <div className="sticky z-50 top-0 mx-auto px-4 py-5 bg-ivory dark:bg-dark_gray">
+    <div className="sticky z-50 top-0  px-4 py-5 bg-ivory dark:bg-dark_gray">
       <div className="flex md:flex-row justify-between items-center">
         <Link 
           to="home"
