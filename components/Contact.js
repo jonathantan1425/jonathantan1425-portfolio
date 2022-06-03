@@ -10,9 +10,9 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
   const fields = [
-    {id: 'Your Name', type: 'text', func: setName},
-    {id: 'Your Email', type: 'email', func: setEmail},
-    {id: 'Your Phone', type: 'text', func: setPhone},
+    {id: 'Your Name', type: 'text', func: setName, value: name},
+    {id: 'Your Email', type: 'email', func: setEmail, value: email},
+    {id: 'Your Phone', type: 'text', func: setPhone, value: phone},
   ]
 
   const renderField = fields.map((field) => {
@@ -21,6 +21,7 @@ export default function Contact() {
         <input
           type={field.type}
           placeholder={field.id}
+          value={field.value}
           onChange={(e) => {field.func(e.target.value)}}
           className="
           w-full
@@ -40,15 +41,20 @@ export default function Contact() {
   })
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Sending')
+    e.preventDefault();
+    console.log('Sending');
+    setSubmitted(true);
+    setName('')
+    setEmail('')
+    setPhone('')
+    setMessage('')
 
     let data = {
       name,
       email,
       phone,
       message
-    }
+    };
 
     fetch('/api/contact', {
       method: 'POST',
@@ -59,15 +65,17 @@ export default function Contact() {
       body: JSON.stringify(data)
     }).then((res) => {
       console.log('Response received')
-      if (res.status === 200) {
+      if (res.statusCode === 200) {
         console.log('Response succeeded!')
-        setSubmitted(true)
-        setName('')
-        setEmail('')
-        setPhone('')
-        setBody('')
       }
   })}
+
+  const renderSubmitted = () => {
+    return (
+      <p className="text-mint my-4">
+        Thank you for reaching out! I will be in contact soon.
+      </p>
+  )}
 
   return (
     <div className="w-full lg:w-1/2 xl:w-5/12">
@@ -77,6 +85,7 @@ export default function Contact() {
             <textarea
               rows="6"
               placeholder="Your Message"
+              value={message}
               onChange={(e) => {setMessage(e.target.value)}}
               className="
               w-full
@@ -97,7 +106,9 @@ export default function Contact() {
         <div>
             <button
               type="submit"
-              onClick={(e) => {handleSubmit(e)}}
+              onClick={(e) => {
+                handleSubmit(e);
+              }}
               className="
               w-full
               text-white
@@ -113,6 +124,7 @@ export default function Contact() {
             </button>
         </div>
       </form>
+      {submitted && renderSubmitted()}
     </div>
   )
 }
