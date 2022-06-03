@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Parallax, ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
-
 
 import router from "../components/ContainerBlock";
 import meta from "../components/ContainerBlock";
@@ -15,10 +14,6 @@ import ExperienceCards from "../components/experiences/ExperienceCards";
 import Contact from "../components/Contact";
 
 const App = () => {
-  useEffect(() => {
-    Aos.init({});
-  }, [])
-
   const heroBg = {
     image: '/tower.JPG',
     scale: [1, 2, "easeIn"],
@@ -31,10 +26,10 @@ const App = () => {
     expanded: false,
     children: (
       <div className="absolute inset-x-0 inset-y-20 flex flex-col items-center justify-start">
-        <p className="text-8xl lg:text-9xl font-thin text-white font-sans">
+        <p className="text-4xl md:text-8xl lg:text-9xl font-thin text-white font-sans">
           {"JONATHAN TAN"}
         </p>
-        <p className="text-xl lg:text-3xl font-thin font-sans text-white text-center items-stretch">
+        <p className="text-sm md:text-xl lg:text-3xl font-thin font-sans text-white text-center items-stretch">
           {"I design and engineer fullstack applications"}
         </p>
       </div>
@@ -45,7 +40,7 @@ const App = () => {
     <>
       <Head>
         <title>{meta.data}</title>
-        <meta content={meta.description} name="description" />
+        <meta content={meta.description} name="description"/>
         <meta
             property="og:url"
             content={`https://localhost${router.asPath}`}
@@ -60,13 +55,13 @@ const App = () => {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
-      <Navbar/>
-      <main className="bg-ivory dark:bg-dark_gray px-0 font-poppins space-y-80 transition ease-in-out">
+      <Navbar className="transition ease-in-out"/>
+      <main className="bg-ivory dark:bg-dark_gray font-poppins space-y-32 sm:space-y-80 overflow-y-auto">
         <ParallaxProvider>
-          <div className="mx-10" name="home">
+          <div className="relative mx-10" name="home">
             <ParallaxBanner
               layers={[heroBg, heroText]}
-              className="aspect-[1/1]"
+              className="aspect-[2/3] sm:aspect-[1/1]"
             >
             </ParallaxBanner>
           </div>
@@ -74,12 +69,12 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10" name="about">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
+            <div className="relative mx-10 sm:grid sm:grid-cols-3 gap-10" name="about">
+              <div className="relative mx-10 text-center sm:mx-20 max-w-lg inset-y-0 px-2 md:px-7 text-xl text-black align-top font-thin pb-10 sm:pb-0">
                 {"ABOUT ME"}
               </div>
-              <div className="relative inset-y-0 right-0 space-y-5 col-span-2 lg:right-100 lg:w-2/3">
-                <p className="text-6xl text-black font-poppins font-medium">
+              <div className="relative inset-y-0 right-0 space-y-5 sm:col-span-2 lg:right-100 lg:w-2/3">
+                <p className="text-2xl sm:text-6xl text-black font-poppins font-medium">
                   {"I bring backend and data engineering to data-intensive applications."}
                 </p>
                 <p className="text-lg text-black font-thin">
@@ -100,8 +95,8 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10" name="experience">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
+            <div className="relative mx-10 sm:grid sm:grid-cols-3 gap-10" name="experience">
+              <div className="relative mx-10 text-center sm:mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin pb-10 sm:pb-0">
                 {"WORK EXPERIENCE"}
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">
@@ -113,13 +108,13 @@ const App = () => {
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10 overflow-visible" name="projects">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
+            <div className="relative mx-10 sm:grid sm:grid-cols-3 gap-10" name="projects">
+              <div className="relative mx-10 text-center sm:mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin pb-10 sm:pb-0">
                 {"PROJECTS"}
               </div>
-              <div className="relative inset-y-0 col-span-2 flex gap-10">
+              <div className="relative inset-y-0 sm:col-span-2 flex gap-10 items-center justify-around sm:justify-start pb-10 sm:pb-0">
                 <p className="py-1 text-sm text-black align-center">
-                  {"03 / 03"}
+                  {`03`}
                 </p>
                 <Link href="/projects">
                   <button className="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2" disabled>
@@ -127,17 +122,15 @@ const App = () => {
                   </button>
                 </Link>
               </div>
-                <div className="relative inset-y-0 right-0 space-y-5 col-span-3 overflow-visible">
-                  <ProjectCards />
-                </div>
+              <ProjectCards/>
             </div>
           </Parallax>
 
           <Parallax 
             opacity={[0, 2, "easeOutQuad"]}
           >
-            <div className="relative mx-10 grid grid-cols-3 gap-10" name="contact">
-              <div className="relative mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin">
+            <div className="relative mx-10 sm:grid sm:grid-cols-3 gap-10" name="contact">
+              <div className="relative mx-10 text-center sm:mx-20 max-w-lg inset-y-0 text px-2 md:px-7 text-xl text-black align-top font-thin pb-10 sm:pb-0">
                 {"CONTACT ME"}
               </div>
               <div className="relative inset-y-0 right-0 space-y-5 col-span-2">

@@ -7,8 +7,8 @@ import { GithubIcon } from "./projects/icons";
 export default function Footer() {
   return (
     <div className="bg-dark_gray dark:bg-ivory">
-      <div className="max-w-6xl mx-auto px-4 md:py-20">
-        <div className="flex flex-col md:space-y-0 md:flex-row justify-between md:items-center mt-8">
+      <div className="max-w-6xl mx-auto px-4 py-10 md:py-20">
+        <div className="sm:flex space-y-5 md:space-y-0 md:flex-row justify-between md:items-center ">
           <div className="text-ivory dark:text-dark_gray">
             <p>&copy; {userData.fullName}. All rights reserved.</p>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="space-x-4 flex flex-row items-center">
-            {socialMedia("dark")}
+            {socialMedia("black")}
           </div>
         </div>
       </div>

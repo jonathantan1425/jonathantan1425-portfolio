@@ -1,9 +1,11 @@
 import userData from "../constants/data";
 
 export function socialMedia(color) {
-  var logoClass = `fill-dark_gray dark:fill-white hover:fill-mint dark:hover:fill-mint duration-300 bi bi-${socialMedia} h-5 w-5`;
-  if (color === "dark") {
-    logoClass = `fill-ivory dark:fill-dark_gray hover:fill-mint dark:hover:fill-mint duration-300 bi bi-${socialMedia} h-5 w-5`;
+  if (color === "black") {
+    var logoClass = `fill-ivory dark:fill-dark_gray hover:fill-mint dark:hover:fill-mint duration-300 h-5 w-5`;
+  }
+  if (color === "light") {
+    var logoClass = `fill-dark_gray dark:fill-ivory hover:fill-mint dark:hover:fill-mint duration-300 h-5 w-5`;
   }
 
   const pathData = {

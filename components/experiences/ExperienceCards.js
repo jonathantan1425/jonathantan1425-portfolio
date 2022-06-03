@@ -46,13 +46,13 @@ export default function ExperienceCards() {
                       <ul className="space-y-10">
                         <div>
                           <div className="flex gap-3">
-                            <p className="font-semibold text-2xl">
+                            <p className="font-bold text-2xl">
                               {experience.position}
                             </p>
-                            <p className="font-semibold text-green text-2xl dark:text-mint">
+                            <p className="font-bold text-green text-2xl dark:text-mint">
                               {"//"}
                             </p>
-                            <p className="font-semibold text-green text-2xl dark:text-mint">
+                            <p className="font-bold text-green text-2xl dark:text-mint">
                               {experience.company}
                             </p>
                           </div>
