@@ -14,7 +14,7 @@ const PROJECTS = [
       {stack: 7, value: "S3"},
     ],
     weblinks: [
-      {site: "github", link: "https://github.com/quinncheong/GSEngage2022-TheFoobarFighters"},
+      {site: "github_dark", link: "https://github.com/quinncheong/GSEngage2022-TheFoobarFighters"},
     ],
     image: "/gsengage2021.png",
   },
@@ -28,7 +28,7 @@ const PROJECTS = [
       {stack: 2, value: "Node.js"},
     ],
     weblinks: [
-      {site: "github", link: "https://github.com/quinncheong/appetizer-foobar-2022"},
+      {site: "github_dark", link: "https://github.com/quinncheong/appetizer-foobar-2022"},
     ],
     image: "/appetizer2021.png",
   },
@@ -41,7 +41,7 @@ const PROJECTS = [
       {stack: 1, value: "Python"},
     ],
     weblinks: [
-      {site: "github", link: "https://github.com/jonathantan1425/zcc-zendesk-ticket-viewer"},
+      {site: "github_dark", link: "https://github.com/jonathantan1425/zcc-zendesk-ticket-viewer"},
     ],
     image: "/zcc.png",
   },

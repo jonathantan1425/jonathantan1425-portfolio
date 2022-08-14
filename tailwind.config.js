@@ -14,6 +14,7 @@ module.exports = {
       currentColor: 'currentColor',
       ivory: '#F9F9ED',
       white: '#FBFCFF',
+      black: '#000000',
       light_gray: '#D0CCD0',
       light_gray_2: '#CFD8D7',
       dark_gray: '#364156',
