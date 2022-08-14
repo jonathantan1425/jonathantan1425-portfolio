@@ -10,6 +10,7 @@ const ICONS = {
   "FastAPI": FastApiIcon(SIZE),
   "S3": S3Icon(SIZE),
   "github": GithubIcon(SIZE, "light"), 
+  "github_dark": GithubIcon(SIZE, "dark"), 
 };
 
 export default ICONS;

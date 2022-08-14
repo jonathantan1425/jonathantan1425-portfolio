@@ -9,9 +9,12 @@ import router from "../components/ContainerBlock";
 import meta from "../components/ContainerBlock";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PROJECTS from "../components/projects/data";
 import ProjectCards from "../components/projects/ProjectCards";
 import ExperienceCards from "../components/experiences/ExperienceCards";
 import Contact from "../components/Contact";
+
+import 'tw-elements';
 
 const App = () => {
   const heroBg = {
@@ -114,7 +117,7 @@ const App = () => {
               </div>
               <div className="relative inset-y-0 sm:col-span-2 flex gap-10 items-center justify-around sm:justify-start pb-10 sm:pb-0">
                 <p className="py-1 text-sm text-black align-center">
-                  {`03`}
+                  {"0" + PROJECTS.length} 
                 </p>
                 <Link href="/projects">
                   <button className="px-4 py-1 text-sm font-semibold rounded-full border border-purple-200 hover:text-mint hover:border-mint focus:outline-none focus:ring-2 focus:ring-offset-2" disabled>
@@ -122,6 +125,8 @@ const App = () => {
                   </button>
                 </Link>
               </div>
+            </div>
+            <div className='py-5'>
               <ProjectCards/>
             </div>
           </Parallax>
