@@ -41,7 +41,7 @@ export default function ProjectCards() {
       }>
         <img
             src={project.image}
-            class="block w-full"
+            className="block w-full"
             alt="..."
           />
         <div className="carousel-caption hidden absolute bottom-0 left-0 w-full h-1/2 items-end sm:block text-center bg-gradient-to-t from-black">
