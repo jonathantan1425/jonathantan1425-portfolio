@@ -34,11 +34,14 @@ export default function ProjectCards() {
 
   const renderProjectCards = PROJECTS.map((project, index) => {
     return (
-      <div className={
-        index === 0
-          ? "carousel-item active relative float-left w-full"
-          : "carousel-item relative float-left w-full"
-      }>
+      <div 
+        className={
+          index === 0
+            ? "carousel-item active relative float-left w-full"
+            : "carousel-item relative float-left w-full"
+        }
+        key={index}
+      >
         <img
             src={project.image}
             className="block w-full"
@@ -82,6 +85,7 @@ export default function ProjectCards() {
         aria-label={
           "Project " + index
         }
+        key={index}
       >
       </button>
     )
@@ -96,7 +100,7 @@ export default function ProjectCards() {
       <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
         {renderCarousellButtons}
       </div>
-      <div class="carousel-inner relative w-full overflow-hidden">
+      <div className="carousel-inner relative w-full overflow-hidden">
         {renderProjectCards}
       </div>
       <button
