@@ -4,11 +4,13 @@ const EXPERIENCES = [
     company: "Zendesk",
     position: "Software Engineering Intern",
     start_date: "Feb 2022",
-    end_date: "Present",
+    end_date: "Aug 2022",
     about: "I worked in the Zendesk Chat backend team to improve product reliability and scalability",
     description: [
-      {line: 1, value: "Wrote performant code to improve backend services' reliability and scalability"},
-      {line: 2, value: "Enhance OAuth2 authentication for customised workflow and improved security"},
+      {line: 1, value: "Hashed OAuth2 data at rest to improve improve data security for more than 200,000 clients, with 0 API downtime"},
+      {line: 2, value: "Conceptualised and improved OAuth2 client authorisation to use hashed OAuth2 clients to deprecate plaintext secrets"},
+      {line: 3, value: "Employed MySQL database locks to prevent race conditions between concurrent API requests, improving reliability"},
+      {line: 4, value: "Triaged and monitored production API requests using Datadog metrics and logs"},
     ],
   },
   {
@@ -17,7 +19,7 @@ const EXPERIENCES = [
     position: "Data Engineer Intern",
     start_date: "May 2021",
     end_date: "Feb 2022",
-    about: "I built data pipelines and APIs for a data analytics product",
+    about: "I built data pipelines and APIs for a data analytics product to help dental clinics improve their operations",
     description: [
       {line: 1, value: "Designed, proposed, and implemented Python ETL data pipeline and architecture to derive business insights for dental clinics, improving the minimum viable product (MVP) runtime from 40 minutes to 5 minutes"},
       {line: 2, value: "Configured and deployed Linux virtual machines on DigitalOcean and Google Cloud Platform for remote MySQL database management and continuous data pipeline"},

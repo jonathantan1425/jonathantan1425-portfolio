@@ -1,5 +1,21 @@
 const PROJECTS = [
   {
+    id: "gs-service-exchange",
+    projectName: "GS Service Exchange",
+    about: "A web marketplace to provide digital banking services to Southeast Asia Fintech Startups",
+    projectOutcome: "1st Runner Up, Ellipsis Tech Series 2022 Hackthon, Present by Goldman Sachs",
+    techStack: [
+      {stack: 1, value: "React"},
+      {stack: 2, value: "Next.js"},
+      {stack: 3, value: ".NET"},
+      {stack: 4, value: "Elastic Beanstalk"},
+    ],
+    weblinks: [
+      {site: "github_dark", link: "https://github.com/jonathantan1425/gs-service-exchange"},
+    ],
+    image: "/gs-service-exchange.png",
+  },
+  {
     id: "gsengage2021",
     projectName: "Customisable Report Rendering",
     about: "A highly customizable, scalable, intuitive and automated report rendering solution",

@@ -47,7 +47,7 @@ export default function ProjectCards() {
             className="block w-full"
             alt="..."
           />
-        <div className="carousel-caption hidden absolute bottom-0 left-0 w-full h-1/2 items-end sm:block text-center bg-gradient-to-t from-black">
+        <div className="carousel-caption hidden absolute bottom-0 left-0 w-full h-3/4 items-end sm:block text-center bg-gradient-to-t from-black">
           <div className="absolute bottom-0 left-0 right-0 mb-9">
             <p className="font-light text-sm">
               {project.projectOutcome.toUpperCase()}
