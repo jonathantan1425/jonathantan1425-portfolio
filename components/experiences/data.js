@@ -7,10 +7,9 @@ const EXPERIENCES = [
     end_date: "Aug 2022",
     about: "I worked in the Zendesk Chat backend team to improve product reliability and scalability",
     description: [
-      {line: 1, value: "Hashed OAuth2 data at rest to improve improve data security for more than 200,000 clients, with 0 API downtime"},
-      {line: 2, value: "Conceptualised and improved OAuth2 client authorisation to use hashed OAuth2 clients to deprecate plaintext secrets"},
-      {line: 3, value: "Employed MySQL database locks to prevent race conditions between concurrent API requests, improving reliability"},
-      {line: 4, value: "Triaged and monitored production API requests using Datadog metrics and logs"},
+      {line: 1, value: "Hashed OAuth2 data at rest to improve data security for more than 200,000 clients, with 0 API downtime"},
+      {line: 2, value: "Employed MySQL database locks to prevent race conditions between concurrent API requests, improving reliability"},
+      {line: 3, value: "Triaged and monitored production API requests using Datadog metrics and logs"},
     ],
   },
   {
