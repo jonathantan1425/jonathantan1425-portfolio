@@ -1,25 +1,38 @@
-# binaries
-bin/
-dist/
-lib/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# editors
-*.swp
-.idea/
-.vs/
-.vscode/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
+*.pem
 
-# React
-node_modules/
-build/
-.next/
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/.changelog
-.npm/
-package-lock.json
 
-# security
-*.env
+# local env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# next cache
+.next/
