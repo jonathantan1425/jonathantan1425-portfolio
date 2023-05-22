@@ -1,70 +1,18 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    './src/**/*.{html,js}',
-    './node_modules/tw-elements/dist/js/**/*.js',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      currentColor: 'currentColor',
-      ivory: '#F9F9ED',
-      white: '#FBFCFF',
-      light_gray: '#D0CCD0',
-      light_gray_2: '#CFD8D7',
-      dark_gray: '#364156',
-      mint: '#97C3B8',
-      green: '#59736D',
-      orange_light: '#E5B299',
-      orange_dark: '#D79771',
-      blue: '#37718E',
-      pink: '#E87EA1',
-    },
-    container: {
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
-      },
-    },
-    minWidth: {
-      '1/2': '50%',
-    },
     extend: {
-      spacing: {
-        'hero': '80rem',
-      },
-      fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-        poppins: ["Poppins", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
-      },
-      aspectRatio: {
-        '2/3': '2 / 3',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
-  variants: {
-    fill: ['hover', 'focus'],
-    animation: ["motion-safe"],
-  },
-  plugins: [
-    require('tw-elements/dist/plugin'),
-  ],
-  darkMode: `class`,
-  animation: {
-    fadeIn: "fadeIn 2s ease-in forwards"
-  },
-  keyframes: {
-    fadeIn: {
-      "0%": { opacity: 0 },
-      "100%": { opacity: 1 }
-    }
-  },
+  plugins: [],
 }
