@@ -1,16 +1,14 @@
-import { CatchingPokemonSharp } from '@mui/icons-material';
-
-require('dotenv').config();
+require("dotenv").config();
 const PERSONAL_EMAIL = process.env.personal_email;
 const EMAIL = process.env.email;
 const PASSWORD = process.env.password;
 
 export default function send(req, res) {
-  var nodeoutlook = require('nodejs-nodemailer-outlook')
+  var nodeoutlook = require("nodejs-nodemailer-outlook");
   nodeoutlook.sendEmail({
     auth: {
-        user: EMAIL,
-        pass: PASSWORD
+      user: EMAIL,
+      pass: PASSWORD,
     },
     from: EMAIL,
     to: PERSONAL_EMAIL,
@@ -21,7 +19,8 @@ export default function send(req, res) {
     onSuccess: (i) => {
       console.log(i);
       res.status = 200;
-      console.log(res)
-      return res;}
+      console.log(res);
+      return res;
+    },
   });
-};
+}
