@@ -2,196 +2,134 @@
 
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-import { useEffect, useState } from "react";
 import Tag from "../../../components/tag";
+import { projectData, ProjectDetail } from "../../../data/projects";
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
-const poppinsBold = Poppins({ subsets: ["latin"], weight: "700" });
+const poppinsMedium = Poppins({ subsets: ["latin"], weight: "500" });
 const poppinsItalic = Poppins({
   subsets: ["latin"],
   style: "italic",
   weight: "400",
 });
-const poppinsRegular = Poppins({ subsets: ["latin"], weight: "400" });
+const poppinsBody = Poppins({ subsets: ["latin"], weight: "400" });
 
 const headerClass =
-  poppinsBold.className + " text-right text-smoke-200 text-[128px]";
+  poppinsMedium.className +
+  " whitespace-nowrap text-smoke-50 text-size-subtitle";
 
-const projectCards = [
-  {
-    title: "GS Service Exchange",
-    achievement: "1ST RUNNER UP",
-    context: "Ellipsis Tech Series 2022 Hackathon, Presented by Goldman Sachs",
-    description:
-      "A web marketplace to provide digital banking services to Southeast Asian Fintech startups",
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Firebase"],
-    image: "/images/gs-service-exchange.png",
-    weblinks: [
-      {
-        site: "github",
-        url: "https://github.com/jonathantan1425/gs-service-exchange",
-      },
-    ],
-  },
-  {
-    title: "GS Service Exchange",
-    achievement: "1ST RUNNER UP",
-    context: "Ellipsis Tech Series 2022 Hackathon, Presented by Goldman Sachs",
-    description:
-      "A web marketplace to provide digital banking services to Southeast Asian Fintech startups",
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Firebase"],
-    image: "/images/gs-service-exchange.png",
-    weblinks: [
-      {
-        site: "github",
-        url: "https://github.com/jonathantan1425/gs-service-exchange",
-      },
-    ],
-  },
-  {
-    title: "GS Service Exchange",
-    achievement: "1ST RUNNER UP",
-    context: "Ellipsis Tech Series 2022 Hackathon, Presented by Goldman Sachs",
-    description:
-      "A web marketplace to provide digital banking services to Southeast Asian Fintech startups",
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Firebase"],
-    image: "/images/gs-service-exchange.png",
-    weblinks: [
-      {
-        site: "github",
-        url: "https://github.com/jonathantan1425/gs-service-exchange",
-      },
-    ],
-  },
-  {
-    title: "GS Service Exchange",
-    achievement: "1ST RUNNER UP",
-    context: "Ellipsis Tech Series 2022 Hackathon, Presented by Goldman Sachs",
-    description:
-      "A web marketplace to provide digital banking services to Southeast Asian Fintech startups",
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Firebase"],
-    image: "/images/gs-service-exchange.png",
-    weblinks: [
-      {
-        site: "github",
-        url: "https://github.com/jonathantan1425/gs-service-exchange",
-      },
-    ],
-  },
-];
+const titleClass = `${poppinsBody.className} px-2 py-1 text-smoke-50 bg-turquoise-950 text-size-header`;
+const achievementClass = `${poppinsItalic.className} text-smoke-950 text-size-subheader`;
+const contextClass = `${poppinsBody.className} text-smoke-600 text-size-subtitle`;
+const descriptionClass = `${poppinsBody.className} text-smoke-800 text-size-body`;
+const sectionClass = `${poppinsBody.className} text-smoke-300 text-size-subtitle`;
 
-function renderProjectCards(currentCard: number) {
-  const titleClass = `${poppinsBold.className} text-turquoise-950 text-[64px]`;
-  const achievementClass = `${poppinsItalic.className} text-turquoise-950 text-[32px]`;
-  const contextClass = `${poppinsRegular.className} text-turquoise-950 text-[24px]`;
-  const descriptionClass = `${poppinsRegular.className} text-smoke-800 text-[24px]`;
-  const techStackClass = `${poppinsRegular.className} text-turquoise-950 uppercase text-[18px]`;
+function renderProjectIndicator(currentCard: number) {
+  const baseClass = "w-4 h-4 transition duration-500 ease-in-out";
+  const indicatorClass =
+    baseClass + " bg-smoke-200 hover:bg-turquoise-950 hover:cursor-pointer";
+  const activeIndicatorClass =
+    baseClass + " bg-turquoise-950 disabled:cursor-default";
 
-  // return projectCards.map((projectCard, index) => {
-  //   if (index > 0) {
-  //     return <></>;
-  //   }
-  return (
-    <div className="flex flex-col gap-20">
-      <div>
-        <h2 className={titleClass}>{projectCards[currentCard].title}</h2>
-        <h3 className={achievementClass}>
-          {projectCards[currentCard].achievement}
-        </h3>
-        <h4 className={contextClass}>{projectCards[currentCard].context}</h4>
-      </div>
-      <div>
-        <p className={descriptionClass}>
-          {projectCards[currentCard].description}
-        </p>
-        {projectCards[currentCard].techStack.map((tech, index) => {
-          return (
-            <>
-              <Tag text={tech} />
-            </>
-          );
-        })}
-      </div>
-    </div>
-  );
-  // });
-}
-
-function renderProjectImages(currentCard: number) {
-  return projectCards.map((projectCard, index) => {
-    const offsetAmount = 20 * (index - currentCard);
-    const zAxis = -index;
-    const cardStyle = {
-      left: `${offsetAmount}px`,
-      bottom: `${offsetAmount}px`,
-      margin: "0 auto",
-      transform: "translateX(10%)",
-      zIndex: `${zAxis}`,
-    };
-
-    let cardClass =
-      "absolute aspect-video overflow-hidden w-4/5 shadow-xl rounded-xl transition duration-500 ease-in-out";
-    if (index < currentCard) {
-      return <></>;
-    }
-    if (index > currentCard) {
-      cardClass += " grayscale saturate-50 contrast-50 blur-sm";
-    }
-
-    return (
-      <div key={index} className={cardClass} style={cardStyle}>
-        <Image
-          src={projectCard.image}
-          alt={projectCard.title}
-          layout="fill"
-          priority
-        />
-      </div>
-    );
-  });
-}
-
-function renderProjectIndicator(currentCard: number, clickHandler: Function) {
-  const baseClass = "w-4 h-4 rounded-full transition duration-500 ease-in-out";
-  const indicatorClass = baseClass + " bg-smoke-200";
-  const activeIndicatorClass = baseClass + " bg-turquoise-950";
-
-  return projectCards.map((_, index) => {
+  return projectData.map((project: ProjectDetail, index: number) => {
     if (index === currentCard) {
-      return <button key={index} className={activeIndicatorClass}></button>;
+      return (
+        <Link
+          key={index}
+          className={activeIndicatorClass}
+          href={`/project/${project.id}`}
+        ></Link>
+      );
     } else {
       return (
-        <button
-          onClick={() => clickHandler(index)}
+        <Link
           key={index}
           className={indicatorClass}
-        ></button>
+          href={`/project/${project.id}`}
+        ></Link>
       );
     }
   });
 }
 
-export default function Page() {
-  const [currentCard, setCurrentCard] = useState(0);
+function renderProject(projectId: string) {
+  const project = projectData.find(
+    (project: ProjectDetail) => project.id === projectId
+  );
 
-  function clickHandler(index: number) {
-    setCurrentCard(index);
+  if (!project) {
+    return <></>;
   }
 
   return (
-    <div
-      className="rellax bg-smoke-50 h-screen p-20 flex flex-col justify-around"
-      data-rellax-speed="2"
-    >
-      <div className={headerClass}>PROJECTS</div>
-      <div className="flex gap-x-20">
-        {renderProjectCards(currentCard)}
-        <div className="flex flex-col relative w-3/4 justify-end">
-          {renderProjectImages(currentCard)}
+    <div className="flex flex-col w-full space-y-2">
+      <Image
+        src={project.image}
+        alt={project.title}
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-full h-auto max-h-[50vh] object-cover object-top aspect-video"
+        priority={true}
+      />
+      <div className="flex flex-col space-y-5">
+        <div className="flex">
+          <h2 className={titleClass}>{project.title}</h2>
+        </div>
+        <div>
+          <h4 className={sectionClass}>Achievement</h4>
+          <h3 className={achievementClass}>{project.achievement}</h3>
+          <h4 className={contextClass}>{project.context}</h4>
+        </div>
+        <div>
+          <h4 className={sectionClass}>Links</h4>
+          {project.weblinks.map((weblink, index) => {
+            return (
+              <Link
+                key={index}
+                href={weblink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-turquoise-950 text-size-body uppercase border-b-2 border-smoke-50 hover:border-turquoise-950 transition duration-500"
+              >
+                {weblink.site}
+                <ArrowUpRightIcon className="w-4 h-4 inline-block" />
+              </Link>
+            );
+          })}
+        </div>
+        <div>
+          <h4 className={sectionClass}>Technologies</h4>
+          {project.techStack.map((tech: string, index: number) => {
+            return <Tag key={index} text={tech} />;
+          })}
+        </div>
+        <div>
+          <h4 className={sectionClass}>Project Description</h4>
+          <p className={descriptionClass}>{project.description}</p>
         </div>
       </div>
-      <div className="flex gap-x-10 justify-center">
-        {renderProjectIndicator(currentCard, clickHandler)}
+    </div>
+  );
+}
+
+export default function Page({ params }: { params: { title: string } }) {
+  const title = params.title;
+  const currentProjectIndex = projectData.findIndex(
+    (project) => project.id === title
+  );
+
+  return (
+    <div className="bg-smoke-50 p-5 min-h-[88vh] lg:min-h-[84vh] flex flex-col space-y-10">
+      <div className="flex justify-between items-center">
+        <div className={`px-2 bg-turquoise-950 ${headerClass}`}>PROJECT</div>
+        <div className="flex gap-x-10 justify-center">
+          {renderProjectIndicator(currentProjectIndex)}
+        </div>
       </div>
+      <div className="flex space-x-20">{renderProject(title)}</div>
+      <div className="flex gap-x-10 justify-center"></div>
     </div>
   );
 }

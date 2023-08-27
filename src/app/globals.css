@@ -36,8 +36,12 @@
     @apply font-outline-turquoise-950-xs md:font-outline-turquoise-950-sm xl:font-outline-turquoise-950-xl
   }
 
+  .text-size-subtitle {
+    @apply text-xs xs:text-sm sm:text-base lg:text-lg xl:text-xl
+  }
+
   .text-size-body {
-    @apply text-xs xs:text-sm sm:text-lg lg:text-xl xl:text-2xl
+    @apply text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl
   }
 
   .text-size-subheader {
@@ -45,7 +49,11 @@
   }
 
   .text-size-header {
-    @apply text-xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-7xl
+    @apply text-xl xs:text-2xl sm:text-3xl lg:text-4xl xl:text-6xl
+  }
+
+  .text-size-header-xl {
+    @apply text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-8xl
   }
 }
 
@@ -60,8 +68,20 @@
   color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #f6f6f7;
+}
+
+.section {
+  scroll-margin-top: 67px;
+  
+  @media (min-width: 1024px) {
+    scroll-margin-top: 114px;
+  }
 }
 
 @layer utilities {

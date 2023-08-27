@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "500" });
 const bodyClass = poppins.className + " mx-auto bg-smoke-50";
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={bodyClass}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

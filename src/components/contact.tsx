@@ -1,12 +1,24 @@
+"use client";
+
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 
 const poppinsBold = Poppins({ subsets: ["latin"], weight: "700" });
 const poppinsBody = Poppins({ subsets: ["latin"], weight: "400" });
 
-const subheaderClass = poppinsBody.className + " text-left text-4xl text-smoke-50 mb-4 w-1/2 mx-auto";
-const headerClass = poppinsBold.className + " text-6xl text-smoke-50 mb-4 w-1/2 mx-auto";
-const responseMsgClass = poppinsBody.className + " text-2xl text-smoke-50 mb-4 w-1/2 mx-auto pt-4";
+const subheaderClass =
+  poppinsBody.className + " text-left text-size-subheader text-turquoise-950";
+const responseMsgClass =
+  poppinsBody.className + " text-2xl text-smoke-50 mb-4 pt-4";
+const inputClass = `w-full
+  p-4
+  text-smoke-950
+  border-b border-turquoise-950
+  bg-smoke-50
+  resize-none
+  outline-none
+  focus-visible:shadow-none
+  focus:bg-smoke-100`;
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -32,19 +44,7 @@ export default function Contact() {
           onChange={(e) => {
             field.func(e.target.value);
           }}
-          className="
-          w-full
-          rounded
-          py-3
-          px-[14px]
-          text-smoke-950
-          border border-smoke-50
-          bg-smoke-100
-          resize-none
-          outline-none
-          focus-visible:shadow-none
-          focus:border-turquoise-200
-          "
+          className={inputClass}
         />
       </div>
     );
@@ -72,7 +72,7 @@ export default function Contact() {
     }).then((res) => {
       setIsSending(false);
       console.log("Response received");
-      console.log(res)
+      console.log(res);
       if (res.ok) {
         setSuccess(true);
         console.log("Response succeeded!");
@@ -89,58 +89,56 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col w-full items-center justify-center p-20">
-      <div className="bg-turquoise-950 rounded-xl py-10 px-20 w-full">
-        <p className={subheaderClass}>Like what you see?</p>
-        <p className={headerClass}>Contact me!</p>
-        <form className="w-1/2 mx-auto">
+    <div
+      id="contact"
+      className="section flex justify-center item-center w-full px-5 py-16 "
+    >
+      <div className="space-y-4">
+        <p className={subheaderClass}>Like what you see? Contact me!</p>
+        <form className="w-full max-w-xl">
           {renderField}
-          <div className="mb-6">
-            <textarea
-              rows={6}
-              placeholder="Your Message"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              className="
-                w-full
-                rounded
-                py-3
-                px-[14px]
-                text-smoke-950
-                border border-smoke-50
-                bg-smoke-100
-                resize-none
-                outline-none
-                focus-visible:shadow-none
-                focus:border-turquoise-200
-                "
-            ></textarea>
-          </div>
+          <textarea
+            rows={6}
+            placeholder="Your Message"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+            className={inputClass}
+          ></textarea>
 
-          <div>
-            <button
-              type="submit"
-              onClick={(e) => {
-                handleSubmit(e);
-              }}
-              className={`
-              ${success && !isSending ? "pointer-events-none bg-turquoise-300" : "bg-turquoise-200"}
-                w-full
-                text-turquoise-950
-                rounded
-                p-3
-                transition
-                hover:bg-opacity-80
-                duration-300
-                `}
-            >
-              <span className={`${!success && !isSending ? "" : "hidden"}`}>Send Message</span>
-              <span className={`${isSending ? "" : "hidden"} loading loading-spinner loading-xs`}></span>
-              <span className={`${success && !isSending ? "": "hidden"}`}>Thank you for reaching out! I will be in contact soon.</span>
-            </button>
-          </div>
+          <button
+            type="submit"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+            className={`
+                ${
+                  success && !isSending
+                    ? "pointer-events-none bg-turquoise-950"
+                    : "bg-turquoise-950"
+                }
+                  mt-2
+                  w-full
+                  text-smoke-50
+                  p-4
+                  transition
+                  hover:bg-turquoise-800
+                  duration-300
+                  `}
+          >
+            <span className={`${!success && !isSending ? "" : "hidden"}`}>
+              Send Message
+            </span>
+            <span
+              className={`${
+                isSending ? "" : "hidden"
+              } loading loading-spinner loading-xs`}
+            ></span>
+            <span className={`${success && !isSending ? "" : "hidden"}`}>
+              Thank you for reaching out! I will be in contact soon.
+            </span>
+          </button>
         </form>
       </div>
     </div>

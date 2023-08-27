@@ -10,6 +10,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      black: "#000000",
       turquoise: {
         50: "#effefb",
         100: "#c9fef7",
@@ -54,4 +55,7 @@ module.exports = {
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    styled: false,
+  },
 };
