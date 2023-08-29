@@ -41,7 +41,7 @@
   }
 
   .text-size-body {
-    @apply text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl
+    @apply text-sm xs:text-base sm:text-lg lg:text-xl
   }
 
   .text-size-subheader {

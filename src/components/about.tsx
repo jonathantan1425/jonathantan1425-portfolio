@@ -37,7 +37,7 @@ function renderHeader(activeIndex: number) {
 function renderText(text: string) {
   return (
     <p
-      className={`mt-5 ${poppins.className} text-justify text-smoke-950 text-size-body`}
+      className={`mt-5 ${poppins.className} text-justify text-smoke-950 text-size-body 2xl:max-w-[70%]`}
     >
       {text}
     </p>

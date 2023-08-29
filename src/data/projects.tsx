@@ -11,6 +11,32 @@ class ProjectDetail {
 
 const projectData: ProjectDetail[] = [
   {
+    id: "gobbler",
+    title: "Gobbler",
+    achievement: "Winner",
+    context: "VMWare Tanzu (Enterprise Solution Development) Award Winner",
+    description:
+      "A centralized platform for users to post and view leftover food listings",
+    techStack: [
+      "Flutter",
+      "Kubernetes",
+      "Kong",
+      "Spring Boot",
+      "PostgreSQL",
+      "FastAPI",
+      "RabbitMQ",
+      "Google Cloud Platform",
+      "Redis",
+    ],
+    image: "/images/gobbler.png",
+    weblinks: [
+      {
+        site: "github",
+        url: "https://github.com/cherylperyl/gobbler",
+      },
+    ],
+  },
+  {
     id: "gs-service-exchange",
     title: "GS Service Exchange",
     achievement: "1ST RUNNER UP",
@@ -21,9 +47,6 @@ const projectData: ProjectDetail[] = [
       "React",
       "TypeScript",
       "Next.js",
-      "Tailwind CSS",
-      "Firebase",
-      "AWS Elastic Beanstalk",
     ],
     image: "/images/gs-service-exchange.png",
     weblinks: [

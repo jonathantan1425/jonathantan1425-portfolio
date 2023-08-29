@@ -15,7 +15,7 @@ export default function Navbar() {
       <li key={pathway}>
         <a
           href={redirect}
-          className={`px-2 text-2xl lg:text-4xl ${buttonStyling}`}
+          className={`px-2 text-lg lg:text-2xl ${buttonStyling}`}
         >
           {pathway.toUpperCase()}
         </a>

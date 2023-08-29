@@ -70,7 +70,7 @@ function renderProject(projectId: string) {
         width="0"
         height="0"
         sizes="100vw"
-        className="w-full h-auto max-h-[50vh] object-cover object-top aspect-video"
+        className="w-full h-auto max-h-[50vh] object-cover object-middle aspect-video"
         priority={true}
       />
       <div className="flex flex-col space-y-5">

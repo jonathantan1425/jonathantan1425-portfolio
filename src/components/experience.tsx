@@ -5,16 +5,22 @@ import { experienceData, ExperienceDetail } from "../data/experiences";
 const poppinsMedium = Poppins({ subsets: ["latin"], weight: "500" });
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 const poppinsBody = Poppins({ subsets: ["latin"], weight: "400" });
+const poppinsItalic = Poppins({
+  subsets: ["latin"],
+  style: "italic",
+  weight: "400",
+});
 
 function renderExperience() {
   const organisationClass = `${poppinsBody.className} text-smoke-50 text-size-header bg-turquoise-950 uppercase`;
   const roleClass = `${poppinsBody.className} text-smoke-950 text-size-subtitle uppercase`;
   const periodClass = `${poppinsBody.className} text-smoke-600 text-size-subtitle uppercase`;
-  const headlineClass = `${poppinsBody.className} text-smoke-950 text-justify text-size-body`;
+  const headlineClass = `${poppinsItalic.className} text-smoke-950 text-size-body`;
+  const descriptionClass = `${poppinsBody.className} text-smoke-600 text-size-body`;
 
   return experienceData.map((experience: ExperienceDetail, index: number) => {
     return (
-      <div key={index} className="px-5 py-5 xl:py-10 space-y-4">
+      <div key={index} className="px-5 py-5 xl:py-10 space-y-4 w-full">
         <div className="flex items-center space-x-5">
           <div className={organisationClass}>
             <div className="px-2 py-1">{experience.organisation}</div>
@@ -24,8 +30,9 @@ function renderExperience() {
             <div className={periodClass}>{experience.period}</div>
           </div>
         </div>
-        <div className="text-left">
+        <div className="text-justify space-y-2 2xl:max-w-[70%]">
           <div className={headlineClass}>{experience.headline}</div>
+          <div className={descriptionClass}>{experience.description}</div>
         </div>
       </div>
     );
