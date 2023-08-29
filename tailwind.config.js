@@ -1,71 +1,61 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
+/** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    './src/**/*.{html,js}',
-    './node_modules/tw-elements/dist/js/**/*.js',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     colors: {
-      transparent: 'transparent',
-      currentColor: 'currentColor',
-      ivory: '#F9F9ED',
-      white: '#FBFCFF',
-      black: '#000000',
-      light_gray: '#D0CCD0',
-      light_gray_2: '#CFD8D7',
-      dark_gray: '#364156',
-      mint: '#97C3B8',
-      green: '#59736D',
-      orange_light: '#E5B299',
-      orange_dark: '#D79771',
-      blue: '#37718E',
-      pink: '#E87EA1',
-    },
-    container: {
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+      black: "#000000",
+      turquoise: {
+        50: "#effefb",
+        100: "#c9fef7",
+        200: "#93fcef",
+        300: "#56f2e6",
+        400: "#23ded5",
+        500: "#0ac2bc",
+        600: "#059c9b",
+        700: "#097c7c",
+        800: "#0c6263",
+        900: "#0f5252",
+        950: "#013032",
+      },
+      smoke: {
+        50: "#f6f6f7",
+        100: "#e2e3e5",
+        200: "#c4c6cb",
+        300: "#9fa1a9",
+        400: "#7b7c86",
+        500: "#60626c",
+        600: "#4c4d55",
+        700: "#3f3f46",
+        800: "#35353a",
+        900: "#2e2f33",
+        950: "#18181b",
       },
     },
-    minWidth: {
-      '1/2': '50%',
+    screens: {
+      xxs: "320px",
+      xs: "480px",
+      ...defaultTheme.screens,
     },
     extend: {
-      spacing: {
-        'hero': '80rem',
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-        poppins: ["Poppins", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
-      },
-      aspectRatio: {
-        '2/3': '2 / 3',
+      dropShadow: {
+        turquoise: "0 3px 3px rgba(35, 222, 213, 1)",
       },
     },
   },
-  variants: {
-    fill: ['hover', 'focus'],
-    animation: ["motion-safe"],
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: false,
   },
-  plugins: [
-    require('tw-elements/dist/plugin'),
-  ],
-  darkMode: `class`,
-  animation: {
-    fadeIn: "fadeIn 2s ease-in forwards"
-  },
-  keyframes: {
-    fadeIn: {
-      "0%": { opacity: 0 },
-      "100%": { opacity: 1 }
-    }
-  },
-}
+};
