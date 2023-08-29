@@ -45,10 +45,10 @@ export async function POST(req: any) {
     html: `<div>${message}</div><p>Sent from:
     ${email}</p><p>Phone number:${phone}</p>`,
     onError: (e: any) => {
-      console.error("ERROR", e);
+      return
     },
     onSuccess: (i: any) => {
-      console.log("Success");
+      return
     },
   });
   return NextResponse.json({ message: "Send success" }, { status: 200 });

@@ -52,7 +52,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    console.log("Sending");
     setIsSending(true);
 
     let data = {
@@ -71,11 +70,8 @@ export default function Contact() {
       body: JSON.stringify(data),
     }).then((res) => {
       setIsSending(false);
-      console.log("Response received");
-      console.log(res);
       if (res.ok) {
         setSuccess(true);
-        console.log("Response succeeded!");
       }
     });
   };
