@@ -7,11 +7,10 @@ const poppinsMedium = Poppins({ subsets: ["latin"], weight: "500" });
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 const texts = ["COFFEE FUELED", "BAUHAUS CENTRIC", "SOFTWARE ENGINEER"];
 const description = `
-I'm a final year undergraduate in Business Management and Information
-Systems at Singapore Management University. I build data and backend
-applications alongside my trusty iced Caffè latte. Advocate of form
-follows function, I aspire to write and design clean code that is both
-functional and beautiful.
+I'm a double-degree final year undergraduate in Business Management and Information Systems
+at Singapore Management University. But realistically, I'm a software engineer who loves to
+build products that make people happy, and hopefully their lives better. Building something
+interesting at the moment!
 `;
 const callToActionText =
   "Feel free to browse my projects or drop me a message! Always happy to chat.";

@@ -63,14 +63,14 @@ export default function Experience() {
         <ExperienceHeader />
         <p
           className={
-            poppins.className +
-            " py-4 text-smoke-300 text-size-header"
+            poppins.className + " py-4 text-smoke-300 text-size-header"
           }
         >
-          I focus on developing <span className="text-smoke-50">efficient</span>{" "}
-          and <span className="text-smoke-50">well-documented</span> solutions,
-          with a budding interest in the{" "}
-          <span className="text-smoke-50">payments ecosystem</span>.
+          At work, I focus on developing{" "}
+          <span className="text-smoke-50">efficient</span> and{" "}
+          <span className="text-smoke-50">well-documented</span> solutions, with
+          a keen interest in the{" "}
+          <span className="text-smoke-50">fullstack space</span>.
         </p>
       </div>
       {renderExperience()}

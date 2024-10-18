@@ -11,6 +11,29 @@ class ProjectDetail {
 
 const projectData: ProjectDetail[] = [
   {
+    id: "dellhackathon",
+    title: "MakanPals",
+    achievement: "Runner's Up",
+    context: "Dell InnovateFest 2023",
+    description:
+      "A gamified approach to educate, empower and encourage persons with intellectual disabilities to better interact with F&B options",
+    techStack: [
+      "Expo",
+      "React Native",
+      "Kong",
+      "FastAPI",
+      "MySQL",
+      "VMware Tanzu",
+    ],
+    image: "/images/dellhackathon.png",
+    weblinks: [
+      {
+        site: "github",
+        url: "https://github.com/cherylperyl/gobbler",
+      },
+    ],
+  },
+  {
     id: "gobbler",
     title: "Gobbler",
     achievement: "Winner",

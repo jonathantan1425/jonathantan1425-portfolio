@@ -8,12 +8,20 @@ class ExperienceDetail {
 
 const experienceData: ExperienceDetail[] = [
   {
+    organisation: "COINBASE",
+    role: "Software Engineer Intern",
+    period: "MAY 2024 - AUG 2024",
+    headline: `I enhanced internal tooling for web2 payments as part of the Coinbase International Payments team.`,
+    description: `I consolidated return of deposit information to boost the payment operations team's productivity.
+      Also clinched 2nd place in the Coinbase APAC Intern Hackathon with a BASE decentralized app repository and credibility scoring system.`,
+  },
+  {
     organisation: "PAYPAL",
     role: "Software Engineer Intern",
     period: "AUG 2023 - DEC 2023",
     headline: `I contributed to product compliance with financial regulations as part of the PayPal Compliance Process team.`,
     description: `I supported the consolidation and enhancement of metrics collection and visualization, thereby enabling the
-      incident response team to operate through a single platform.`,
+      incident response team to operate through a single platform. Additionally, fixed P3 and P4 production bugs to learn more about Compliance APIs`,
   },
   {
     organisation: "AUTODESK",
