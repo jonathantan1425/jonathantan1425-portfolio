@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
 import { experienceData, ExperienceDetail } from "../data/experiences";
 
